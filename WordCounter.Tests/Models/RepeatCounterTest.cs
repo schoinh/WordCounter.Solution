@@ -14,11 +14,20 @@ namespace WordCounter.Tests
             Assert.AreEqual(false, output);
         }
 
+        [TestMethod]
         public void ValidInput_CheckForSpecialChars_False()
         {
             RepeatCounter newCounter = new RepeatCounter("milk?", "I like milk");
             bool output = newCounter.ValidInput();
             Assert.AreEqual(false, output);
+        }
+
+        [TestMethod]
+        public void ValidInput_RecognizeValidInput_True()
+        {
+            RepeatCounter newCounter = new RepeatCounter("milk", "I like milk");
+            bool output = newCounter.ValidInput();
+            Assert.AreEqual(true, output);
         }
 
         [TestMethod]
