@@ -21,7 +21,7 @@ DETAILED DESCRIPTION
 
 1. Clone this repository:
     ```
-    $ git clone REPO URL HERE
+    $ git clone https://github.com/schoinh/WordCounter.Solution.git
     ```
 2. Run the application
     ```
