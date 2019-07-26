@@ -19,13 +19,13 @@ namespace WordCounter.Models
         {
             bool output = true;
 
-            if (input.Contains(' '))
+            if (input.Contains(' '))    // Invalid input if spaces are present
             {
                 output = false;
             }
             else
             {
-                for (int i = 0; i < _punctuationMarks.Length; i++)
+                for (int i = 0; i < _punctuationMarks.Length; i++)  // Invalid input if punctuation marks are present
                 {
                     if (input.Contains(_punctuationMarks[i]))
                     {
@@ -33,17 +33,17 @@ namespace WordCounter.Models
                     }
                 }
             }
-
             return output;
         }
 
         public int Count()
         {
-            int finalCount = 0;
+            int wordCount = 0;
 
             string[] wordArray = Sentence.Split(' ');
             for (int i = 0; i < wordArray.Length; i++)
             {
+                // Drop punctuation marks from words in the sentence before comparing to the user-given word
                 foreach (char punctMark in _punctuationMarks)
                 {
                     if (wordArray[i].Contains(punctMark))
@@ -54,11 +54,10 @@ namespace WordCounter.Models
                 
                 if (Word == wordArray[i])
                 {
-                    finalCount++;
+                    wordCount++;
                 }
             }
-
-            return finalCount;
+            return wordCount;
         }
     }
 }
