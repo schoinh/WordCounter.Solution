@@ -14,6 +14,7 @@ DETAILED DESCRIPTION
 | **Counts matching word frequency with only 1 word in sentence** | milk; milk | 1 |
 | **Counts full word matches only** | milk; milky | 0 |
 | **Counts matching word frequency with multiple words in the sentence, when the word only appears once with no punctuation** | milk; I like milk | 1 |
+| **Counts matching word frequency with multiple words in the sentence, when the word appears multiple times with no punctuation** | milk; I like almond milk and rice milk | 2 |
 | **Counts matching word frequency with multiple words in the sentence, when the word only appears once with punctuation** | milk; I like milk. | 1 |
 | **Counts matching word frequency with multiple words in the sentence, when the word appears multiple times** | milk; I like soy milk, almond milk, and oat milk. | 3 |
 
