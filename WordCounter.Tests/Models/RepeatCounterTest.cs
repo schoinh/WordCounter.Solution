@@ -21,7 +21,6 @@ namespace WordCounter.Tests
             Assert.AreEqual(false, output);
         }
 
-
         [TestMethod]
         public void Count_Counts1Repeat_1()
         {

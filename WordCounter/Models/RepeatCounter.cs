@@ -6,6 +6,7 @@ namespace WordCounter.Models
     {
         public string Word { get; set; }
         public string Sentence { get; set; }
+        
         private char[] _punctuationMarks = { '.', ',', '!', '?', '*', '(',')', '[', ']', ':', ';', '/' };
 
         public RepeatCounter(string word, string sentence)
@@ -17,29 +18,19 @@ namespace WordCounter.Models
         public bool ValidInput()
         {
             bool output = true;
-            Console.WriteLine(_punctuationMarks.Length);
 
             if (Word.Contains(' '))
             {
                 output = false;
             }
-            else if (SpecialChars())
+            else
             {
-                output = false;
-            }
-
-            return output;
-        }
-
-        public bool SpecialChars()
-        {
-            bool output = false;
-
-            for (int i = 0; i < _punctuationMarks.Length; i++)
-            {
-                if (Word.Contains(_punctuationMarks[i]))
+                for (int i = 0; i < _punctuationMarks.Length; i++)
                 {
-                    output = true;
+                    if (Word.Contains(_punctuationMarks[i]))
+                    {
+                        output = false;
+                    }
                 }
             }
 
