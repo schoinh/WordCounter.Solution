@@ -6,7 +6,10 @@
 
 ## Description
 
-DETAILED DESCRIPTION
+This console app asks for a word and a sentence from the user, and outputs how many times the word appears in the sentence. 
+
+* The program is case-sensitive, i.e., if the word is "Hello," and the sentence is "I said hello," the program will output 0. 
+* If a user inputs multiple words or includes punctuation marks when prompted for the word, the program will not accept the input.
 
 ### Specs
 | Spec | Input | Output |
