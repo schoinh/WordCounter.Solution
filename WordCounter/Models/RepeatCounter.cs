@@ -15,14 +15,18 @@ namespace WordCounter.Models
 
         public int Count()
         {
-            if (Word == Sentence)
+            int finalCount = 0;
+
+            string[] wordArray = Sentence.Split(' ');
+            foreach (string wordOfSentence in wordArray)
             {
-                return 1;
+                if (Word == wordOfSentence)
+                {
+                    finalCount++;
+                }
             }
-            else
-            {
-                return 0;
-            }
+
+            return finalCount;
         }
     }
 }
