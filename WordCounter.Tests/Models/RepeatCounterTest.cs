@@ -9,24 +9,21 @@ namespace WordCounter.Tests
         [TestMethod]
         public void ValidInput_CheckForSpaces_False()
         {
-            RepeatCounter newCounter = new RepeatCounter("which milk", "I like milk");
-            bool output = newCounter.ValidInput();
+            bool output = RepeatCounter.ValidInput("which milk");
             Assert.AreEqual(false, output);
         }
 
         [TestMethod]
         public void ValidInput_CheckForSpecialChars_False()
         {
-            RepeatCounter newCounter = new RepeatCounter("milk?", "I like milk");
-            bool output = newCounter.ValidInput();
+            bool output = RepeatCounter.ValidInput("milk?");
             Assert.AreEqual(false, output);
         }
 
         [TestMethod]
         public void ValidInput_RecognizeValidInput_True()
         {
-            RepeatCounter newCounter = new RepeatCounter("milk", "I like milk");
-            bool output = newCounter.ValidInput();
+            bool output = RepeatCounter.ValidInput("milk");
             Assert.AreEqual(true, output);
         }
 
