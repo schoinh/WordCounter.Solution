@@ -15,7 +15,7 @@ class Program
         if (!validInput)
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Invalid Input: The word cannot have spaces or punctuation.");
+            Console.WriteLine("Invalid Input. Please enter a single word with no punctuation marks.");
             Console.ResetColor();
 
             GetWord();
@@ -34,7 +34,7 @@ class Program
         if (userInput.Length == 0)
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Invalid Input: Sentence cannot be empty.");
+            Console.WriteLine("Please enter a sentence.");
             Console.ResetColor();
 
             GetSentence();
