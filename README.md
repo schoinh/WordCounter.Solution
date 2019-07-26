@@ -11,6 +11,7 @@ DETAILED DESCRIPTION
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
+| **Checks whether input is valid (1 word; 1 sentence)** | which milk; I like milk | false |
 | **Counts matching word frequency with only 1 word in sentence** | milk; milk | 1 |
 | **Counts full word matches only** | milk; milky | 0 |
 | **Counts matching word frequency with multiple words in the sentence, when the word only appears once with no punctuation** | milk; I like milk | 1 |
