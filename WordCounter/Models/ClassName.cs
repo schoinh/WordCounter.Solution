@@ -1,6 +1,6 @@
 using System;
 
-namespace ProjectName.Models
+namespace WordCounter.Models
 {
     public class ClassName
     {
