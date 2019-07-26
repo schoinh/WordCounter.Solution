@@ -29,5 +29,29 @@ namespace WordCounter.Tests
             int output = newCounter.Count();
             Assert.AreEqual(1, output);
         }
+
+        [TestMethod]
+        public void Count_CountsMultipleRepeatsInMultiWordSentence_2()
+        {
+            RepeatCounter newCounter = new RepeatCounter("milk", "I like almond milk and rice milk");
+            int output = newCounter.Count();
+            Assert.AreEqual(2, output);
+        }
+
+        [TestMethod]
+        public void Count_Counts1RepeatWithPunctuation_1()
+        {
+            RepeatCounter newCounter = new RepeatCounter("milk", "I like milk.");
+            int output = newCounter.Count();
+            Assert.AreEqual(1, output);
+        }
+
+        [TestMethod]
+        public void Count_CountsMultipleRepeatsWithPunctuation_3()
+        {
+            RepeatCounter newCounter = new RepeatCounter("milk", "I like soy milk, almond milk, and oat milk.");
+            int output = newCounter.Count();
+            Assert.AreEqual(3, output);
+        }
     }
 }

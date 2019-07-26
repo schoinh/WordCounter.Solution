@@ -16,11 +16,20 @@ namespace WordCounter.Models
         public int Count()
         {
             int finalCount = 0;
+            char[] punctuationMarks = { '.', ',', '!', '?', '*', '(', ')', '[', ']', ':', ';', '/' };
 
             string[] wordArray = Sentence.Split(' ');
-            foreach (string wordOfSentence in wordArray)
+            for (int i = 0; i < wordArray.Length; i++)
             {
-                if (Word == wordOfSentence)
+                foreach (char punctMark in punctuationMarks)
+                {
+                    if (wordArray[i].Contains(punctMark))
+                    {
+                        wordArray[i] = wordArray[i].Trim(punctuationMarks);
+                    }
+                }
+                
+                if (Word == wordArray[i])
                 {
                     finalCount++;
                 }
