@@ -19,13 +19,18 @@ namespace WordCounter.Models
         {
             bool output = true;
 
-            if (input.Contains(' '))    // Invalid input if spaces are present
+            // Invalid input when user inputs...
+            if (input.Length == 0)  // ...nothing
+            {
+                output = false;
+            }
+            else if (input.Contains(' '))  // ...multiple words
             {
                 output = false;
             }
             else
             {
-                for (int i = 0; i < _punctuationMarks.Length; i++)  // Invalid input if punctuation marks are present
+                for (int i = 0; i < _punctuationMarks.Length; i++)  // ...punctuation marks
                 {
                     if (input.Contains(_punctuationMarks[i]))
                     {
@@ -43,7 +48,7 @@ namespace WordCounter.Models
             string[] wordArray = Sentence.Split(' ');
             for (int i = 0; i < wordArray.Length; i++)
             {
-                // Drop punctuation marks from words in the sentence before comparing to the user-given word
+                // Drop punctuation marks from each word in the sentence
                 foreach (char punctMark in _punctuationMarks)
                 {
                     if (wordArray[i].Contains(punctMark))
